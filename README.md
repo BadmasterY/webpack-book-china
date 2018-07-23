@@ -6,4 +6,4 @@
 当然，感谢一下这本书的作者[@Juho Vepsäläinen](https://github.com/bebraw)，提供了一本这么棒的书！Thanks！<br>
 原文链接:https://github.com/survivejs/webpack-book 翻译内容全部来自个人使用过程中的理解，有错误请指出<br>
 ## 目录
->正在进行最后的修订，预计7.20-7.22陆续上传
+>正在进行最后的修订，~~预计7.20-7.22陆续上传~~由于某些不可抗因素，推迟至7.27-8.1
