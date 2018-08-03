@@ -9,7 +9,6 @@
 写在最开始：翻译这篇文章时，我所用的所有开发环境 npm: 5.8.0, Node: 8.11.0, webpack: 4.4.1, Windows: 6.1.7601(win7 64bit)
 
 ## 目录
->正在进行最后的修订，~~预计7.20-7.22陆续上传~~由于某些不可抗因素，推迟至7.27-8.3  
 
 [00. 什么是webpack](https://github.com/BadmasterY/webpack-book-china/blob/master/0.What-is-webpack.md)  
 [01. 设置项目](https://github.com/BadmasterY/webpack-book-china/blob/master/1.Set-up-the-project.md)  
