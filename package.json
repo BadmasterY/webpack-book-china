@@ -1,0 +1,16 @@
+{
+  "name": "webpack-book-china",
+  "version": "1.0.0",
+  "description": "docs, webpack",
+  "main": "index.js",
+  "repository": "https://github.com/BadmasterY/webpack-book-china.git",
+  "author": "<854007673@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "rcpress dev",
+    "build": "rcpress build"
+  },
+  "dependencies": {
+    "@rcpress/cli": "^0.2.7"
+  }
+}
