@@ -8,7 +8,7 @@
 
 不过称呼为 `Relearn` 对我而言并不奇怪, 因为这本书在 `2018` 年就已经被我翻译并实践过一次, 那时候刚巧赶上 `webpack 4` 正式发布过后不久的时间。
 
-> [2018年4月份的翻译文档](https://github.com/BadmasterY/webpack-book-china)
+> [2018年4月份的翻译文档](https://github.com/BadmasterY/webpack-book-china/tree/master/old-files)
 
 ### 为什么想起来 Relearn ?
 

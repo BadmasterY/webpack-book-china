@@ -3,12 +3,9 @@ module.exports = {
   title: 'Webpack 中文书',
   description: 'BadmasterY(Mr.)',
   // logo: '/webpack.png',
-  // The text at the bottom of the home page supports html format
   footer: 'Proudly powered by <a target="_blank" href="https://www.yvescoding.com/rcpress/">rcpress</a>',
-  // Each element in the format is [tagName, {/* element attribute, which will be attached to the generated element as it is. */}, /* child node */]
-  // some elements that will be inserted into the head of the site when the site is generated,
-  // head: [['link', { rel: 'icon', href: '/favicon.png' }]],
   themeConfig: {
+    lastUpdated: '最后更新',
     search: false,
     // The website header link can be set to important and will be displayed in red.
     nav: [
@@ -28,8 +25,6 @@ module.exports = {
       // The physical path of the rcpress lookup file is: docs (the document directory you set) + the key name in the sidebar
       // For example, the physical path corresponding to /guide/ below is docs/guide/
       '/webpack/': [
-        // Corresponding physical path: docs/guide/introduction.md
-        // Since the frontMatter setting home is true, the access path does not have introduction, direct /guide/
         ['Translator-Preface', '译者序'],
         ['Preface', '前言'],
         ['Introduction', '介绍'],
