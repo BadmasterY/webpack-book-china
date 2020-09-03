@@ -29,10 +29,11 @@
 ✿✿ヽ(°▽°)ノ✿
 
 ### Relearn 系列
-> 截止至 `2020-09-01` 目前只有两部
+> 截止至 `2020-09-01` 目前只有两部  
+> 并且这里的列表可能不会持续更新, 有需要请移步至[RELEARN](https://badmastery.github.io/relearn/)
 
 - [Relearn Canvas 2D](https://zhuanlan.zhihu.com/p/183797616)
-- Webpack 中文书
+- [Webpack 中文书](/)
 
 ### 与上一部(2018.4)的区别
 具体内容是由本书原作者决定的, 不做过多赘述。
@@ -41,5 +42,8 @@
 
 ### 勘误
 如果您发现任何翻译**错误**、翻译**不严谨**、翻译**不明确**的地方可以随时给我提 [issue](https://github.com/BadmasterY/webpack-book-china/issues), 我会在看到的第一时间进行纠正。
+
+> 由于全书部分链接属于国外网站, 可能导致访问过慢或者访问失败, 请在需要的时候启用 **VPN**  
+> 另外, 代码内部的注释大概率不进行翻译, 代码逻辑还是很简单的, 感觉没有必要
 
 by: [BadmasterY(Mr.)](https://github.com/BadmasterY)

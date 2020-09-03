@@ -40,7 +40,7 @@
 
 本书末尾的附录涵盖了次要主题, 有时还会更深入地探讨主要主题。您可以根据自己的兴趣以任意顺序处理它们。
 
-最后的[故障排除](https://survivejs.com/webpack/appendices/troubleshooting/)附录介绍了当 `webpack` 给您错误时的处理方法。它包括一个过程, 因此您知道该怎么办以及如何调试问题。如有疑问, 请研究附录。如果不确定某个术语及其含义, 请参阅本书末尾的[术语表](https://survivejs.com/webpack/appendices/glossary/)。
+最后的[故障排除](https://survivejs.com/webpack/appendices/troubleshooting/)附录介绍了当 `webpack` 给您错误时的处理方法。它包括一个过程, 因此您知道该怎么办以及如何调试问题。如有疑问, 请研究附录。如果不确定某个术语及其含义, 请参阅本书末尾的[术语表](./Appendices/glossary.html)。
 
 ### 为谁编写
 该书主要是为初学者和中级开发人员撰写的。对于已经非常了解 `webpack` 的专家来说, 使用相应技术的想法与思路是有价值的。每章和[结论](https://survivejs.com/webpack/conclusion/)一章中包含的书摘都使您可以快速浏览和了解这些想法。
@@ -77,7 +77,7 @@ const webpack = require("webpack");
 
 有时, 代码假设添加时没有突出显示插入内容, 而且本书的许多示例都没有单独使用, 我已经在可能的情况下与先决条件进行了交叉连接。
 
-您还会在句子中看到 <mark>code</mark>, 有时还会**突出显示**重要的术语。您可以在[术语表](https://survivejs.com/webpack/appendices/glossary/)中找到这些术语的定义。
+您还会在句子中看到 <mark>code</mark>, 有时还会**突出显示**重要的术语。您可以在[术语表](./Appendices/glossary.html)中找到这些术语的定义。
 
 ::: tip-zh | 
 本书示例中特意使用了逗号结尾，因为它为代码示例提供了更清晰的区别。

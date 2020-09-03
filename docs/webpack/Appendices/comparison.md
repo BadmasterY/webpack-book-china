@@ -1,7 +1,7 @@
 ## 构建工具比较
-过去, 将脚本连在一起就足够了。但是, 时代已经改变了, 分发 `JavaScript` 代码可能是一项复杂的工作。随着单页应用程序(`SPA`)的兴起, 这个问题变得愈发显著, 因为它们(`SPA`)往往依赖许多大型库。因此, 产生了许多加载策略。但其基本思想是延迟加载而不是一次加载全部。
+过去, 将脚本连在一起就足够了。但是, 时代在进步, 分发 `JavaScript` 代码可能是一项复杂的工作。随着单页应用程序(`SPA`)的兴起, 这个问题变得愈发显著, 因为它们(`SPA`)往往依赖许多大型库。因此, 产生了许多加载策略。但其基本思想是延迟加载而不是一次加载全部。
 
-`Node` 和其软件包管理器 [npm](https://www.npmjs.com/) 的流行提供了更多的上下文。在 `npm` 流行之前, 很难进行依赖管理。曾经有一段时间, 人们开发了特定于前端的包管理器, 但最终 `npm` 赢得了胜利。现在, 依赖管理比以前更舒适, 尽管仍有许多挑战需要克服。
+`Node` 和其软件包管理器 [npm](https://www.npmjs.com/) 的流行提供了更多的运行上下文。在 `npm` 流行之前, 很难进行依赖管理。曾经有一段时间, 人们开发了特定于前端的包管理器, 但最终 `npm` 赢得了胜利。现在, 依赖管理比以前更舒适, 尽管仍有许多挑战需要克服。
 
 ::: tip-zh | 
 [Tooling.Report](https://bundlers.tooling.report/) 提供了最流行的构建工具的功能比较。
@@ -232,14 +232,14 @@ module.exports = {
 #### Rollup
 [Rollup](https://www.npmjs.com/package/rollup) 专门用于打包 `ES2015` 代码。*Tree shaking* 是它的卖点之一, 它还支持代码拆分。您可以通过 [rollup-loader](https://www.npmjs.com/package/rollup-loader) 将 `Rollup` 与 `webpack` 一起使用。
 
-[vite](https://www.npmjs.com/package/vite) 是建立在 `Rollup` 之上固执己见的包装器, 并且在设计时特别考虑了 `Vue 3`。[nollup](https://www.npmjs.com/package/nollup) 是另一个包装器, 它具有开箱即用的功能, 例如[模块热更新](./hmr.html)。
+[vite](https://www.npmjs.com/package/vite) 是建立在 `Rollup` 之上固执己见的打包工具, 并且在设计时特别考虑了 `Vue 3`。[nollup](https://www.npmjs.com/package/nollup) 是另一个打包工具, 它具有开箱即用的功能, 例如[模块热更新](./hmr.html)。
 
 #### Webpack
 您可以说 [webpack](https://webpack.js.org/) 比 `Browserify` 采用了更为统一的方法。`Browserify` 由多个小工具组成, 而 `webpack` 带有一个核心, 可提供许多现成的功能。
 
 `Webpack` 核心可以使用特定的加载器和插件进行扩展。它控制着如何解析模块, 从而使您的构建适应特定情况和解决无法正常使用的包成为可能。
 
-与其他工具相比, `webpack` 具有初始复杂性, 但是它通过其广泛的功能集弥补了这一点。这是一个需要耐心的高级工具。但是一旦您了解了它的基本概念, `webpack` 就变得强大了。
+与其他工具相比, `webpack` 具有初始复杂性, 但是它通过其广泛的功能集弥补了这一点。这是一个需要耐心的高级工具。但是一旦您了解了它的基本概念, `webpack` 就变得愈发强大了。
 
 为了使其易于使用, 围绕它构建了诸如 [create-react-app](https://www.npmjs.com/package/create-react-app), [poi](https://poi.js.org/) 和 [instapack](https://www.npmjs.com/package/instapack) 之类的工具。
 

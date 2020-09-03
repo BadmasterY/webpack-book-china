@@ -1,4 +1,5 @@
 module.exports = {
+  // theme: './theme',
   base: '/relearn-webpack/',
   title: 'Webpack 中文书',
   description: 'BadmasterY(Mr.)',
@@ -37,7 +38,11 @@ module.exports = {
           collapsable: false,
           children: [
             ['./Appendices/comparison', '构建工具比较'],
-            ['./Appendices/hmr', '模块热更新']
+            ['./Appendices/hmr', '模块热更新'],
+            ['./Appendices/css-modules', 'CSS 模块'],
+            ['./Appendices/searching-with-react', '用 React 搜索'],
+            ['./Appendices/troubleshooting', '故障排除'],
+            ['./Appendices/glossary', '术语表'],
           ],
         }
       ]
