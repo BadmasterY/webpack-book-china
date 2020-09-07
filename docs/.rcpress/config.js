@@ -30,7 +30,9 @@ module.exports = {
           title: 'Developing',
           collapsable: false,
           children: [
-            ['./Developing/start', '起步']
+            ['./Developing/start', '起步'],
+            ['./Developing/development-server', '开发服务器'],
+            ['./Developing/composing-configuration', '组合配置'],
           ],
         },
         {
