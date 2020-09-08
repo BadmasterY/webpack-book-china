@@ -36,6 +36,13 @@ module.exports = {
           ],
         },
         {
+          title: 'Styling', // 样式
+          collapsable: false,
+          children: [
+            ['./Styling/loading-styles', '载入样式'],
+          ],
+        },
+        {
           title: 'Appendices', // 附录
           collapsable: false,
           children: [
@@ -46,7 +53,7 @@ module.exports = {
             ['./Appendices/troubleshooting', '故障排除'],
             ['./Appendices/glossary', '术语表'],
           ],
-        }
+        },
       ]
     }
   }
