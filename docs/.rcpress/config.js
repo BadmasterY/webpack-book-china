@@ -39,7 +39,8 @@ module.exports = {
           title: 'Styling', // 样式
           collapsable: false,
           children: [
-            ['./Styling/loading-styles', '载入样式'],
+            ['./Styling/loading-styles', '加载样式'],
+            ['./Styling/separating-css', '分离 CSS'],
           ],
         },
         {
