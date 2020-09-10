@@ -100,7 +100,7 @@ import "./main.css";
   ],
 },
 ```
-您必须记住要在项目中包含 [autoprefixer](https://www.npmjs.com/package/autoprefixer) 和 [precss](https://www.npmjs.com/package/precss), 才能正常工作。该技术将在["自动前缀"]()一章中详细讨论。
+您必须记住要在项目中包含 [autoprefixer](https://www.npmjs.com/package/autoprefixer) 和 [precss](https://www.npmjs.com/package/precss), 才能正常工作。该技术将在["自动处理前缀"](./autoprefixing)一章中详细讨论。
 
 ::: tip-zh | 
 `PostCSS` 支持基于 <mark>postcss.config.js</mark> 的配置。如果需要其他格式, 它内部依赖于 [cosmiconfig](https://www.npmjs.com/package/cosmiconfig)。

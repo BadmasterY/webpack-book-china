@@ -41,6 +41,15 @@ module.exports = {
           children: [
             ['./Styling/loading-styles', '加载样式'],
             ['./Styling/separating-css', '分离 CSS'],
+            ['./Styling/eliminating-unused-css', '清除未使用的 CSS'],
+            ['./Styling/autoprefixing', '自动处理前缀'],
+          ],
+        },
+        {
+          title: 'Loading Assets', // 加载资源
+          collapsable: false,
+          children: [
+            ['./Loading/loader-definitions', '加载器定义'],
           ],
         },
         {
