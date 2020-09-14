@@ -39,6 +39,7 @@ npm add webpack webpack-nano --develop # --develop === -D
 我们使用了 **`webpack-nano`** 而不是官方的 [webpack-cli](https://www.npmjs.com/package/webpack-cli), 因为它具有用于本书项目的足够的功能, 同时与 `webpack 4` 和 `5` 直接兼容。
 
 `webpack-cli` 附带了其他功能, 包括 `init` 和 `migrate` 命令, 这些命令使您可以快速创建新的 `webpack` 配置并从较旧的版本更新为较新的版本。
+> 译者注: `webpack-cli` 预计等到 `webpack 5` 稳定之后才会对其进行兼容性更新, 所以, 在稳定之前, `webpack-cli` 不支持 `webpack 5`。有关描述可以看一下 [webpack-cli issue 1726](https://github.com/webpack/webpack-cli/issues/1726#issuecomment-667625492)。
 ::: tip-zh | 
 如果要使用 `webpack 5` 来运行示例, 请使用 `npm add webpack@next` 进行安装。
 :::
@@ -103,6 +104,7 @@ document.body.appendChild(component());
 ```bash
 npm add mini-html-webpack-plugin --develop
 ```
+> 译者注: 使用的最新版本 `mini-html-webpack-plugin@3.0.7`, 与 `webpack 5.x` 版本不兼容! 无法实现 `CSS` 热更新, 如果需要正常使用/开发, 请务必使用 `webpack@4.44.1`。
 
 ::: tip-zh | 
 [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin) 是一个具备更多功能的选项, 可以通过插件进行扩展。对于任何超出基本用法的内容, 这是一个不错的选择。

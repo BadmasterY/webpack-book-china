@@ -50,6 +50,8 @@ module.exports = {
           collapsable: false,
           children: [
             ['./Loading/loader-definitions', '加载器定义'],
+            ['./Loading/images', '加载图片'],
+            ['./Loading/fonts', '加载字体'],
           ],
         },
         {
