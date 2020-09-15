@@ -46,13 +46,21 @@ module.exports = {
           ],
         },
         {
-          title: 'Loading Assets', // 加载资源
+          title: 'Loading', // 加载资源
           collapsable: false,
           children: [
             ['./Loading/loader-definitions', '加载器定义'],
             ['./Loading/images', '加载图片'],
             ['./Loading/fonts', '加载字体'],
+            ['./Loading/javascript', '加载 JavaScript'],
           ],
+        },
+        {
+          title: 'Building',
+          collapsable: false,
+          children: [
+            ['./Building/source-maps', 'Source map'],
+          ]
         },
         {
           title: 'Appendices', // 附录

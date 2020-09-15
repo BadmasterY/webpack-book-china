@@ -5,7 +5,7 @@
 
 `Webpack` 可以使用 [url-loader](https://www.npmjs.com/package/url-loader) 内联资源。它将图像作为 `JavaScript` 包中的 `base64` 字符串产出。该过程在增大捆绑包大小的同时减少了所需的请求数。
 
-`Webpack` 可以控制内联过程, 并且可以将加载推迟到 [file-loader](https://www.npmjs.com/package/file-loader)。**`file-loader`** 输出图像文件并返回它们的路径, 而不是内联。如后面的章节所述, 该技术可与其他资产类型一起使用, 例如字体。
+`Webpack` 可以控制内联过程, 并且可以将加载推迟到 [file-loader](https://www.npmjs.com/package/file-loader)。**`file-loader`** 输出图像文件并返回它们的路径, 而不是内联。如后面的章节所述, 该技术可与其他资源类型一起使用, 例如字体。
 
 ### 配置 url-loader
 **`url-loader`** 是一个很好的起点, 它是用于开发目的的理想选择, 因为您不必担心生成的包的大小。它带有 *`limitt`* 选项, 可在达到绝对限制后将图像生成推迟到**文件加载器**。这样, 您可以将小文件内联到 `JavaScript` 包中, 同时为大文件生成单独的文件。
@@ -196,7 +196,7 @@ const src = require(`./avatars/${avatar}`);
 
 回顾一下:
 - **`url-loader`** 内联图像到 `JavaScript` 中。它带有一个 `limit` 选项, 允许您将大于限制的资源推迟到 **`file-loader`**。
-- **`file-loader`** 产出图像资产, 并将它们的路径返回到代码。它允许哈希资源名称。
+- **`file-loader`** 产出图像资源, 并将它们的路径返回到代码。它允许哈希资源名称。
 - 您可以找到与图像优化相关的加载器和插件, 使您可以进一步调整其大小。
 - 可以从较小的图像中生成 `sprite` 表, 以将它们组合为单个请求。
 - `Webpack` 允许您根据给定条件动态加载图像。

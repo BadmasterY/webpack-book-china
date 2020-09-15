@@ -169,11 +169,11 @@ $ node_modules/.bin/wp --mode production
 ```
 
 输出显示:
-- `Hash: 77b99c0f9a9f1f7262a6` —— 构建的哈希值。您可以使用它通过 <mark>[hash]</mark> 占位符使资产无效。在[将哈希添加到文件名]()一章中详细讨论哈希。
+- `Hash: 77b99c0f9a9f1f7262a6` —— 构建的哈希值。您可以使用它通过 <mark>[hash]</mark> 占位符使资源无效。在[将哈希添加到文件名]()一章中详细讨论哈希。
 - `Version: webpack 5.0.0-beta.29` —— `Webpack` 版本。
 - `Time: 292ms` —— 执行构建所花费的时间。
 - `asset index.html 198 bytes [emitted]` —— 流程产生的另一个生成的资源。
-- `asset main.js 136 bytes [emitted] [minimized] (name: main)` —— 所生成资产的名称, 大小, 告诉其如何生成的状态信息, 块的名称。
+- `asset main.js 136 bytes [emitted] [minimized] (name: main)` —— 所生成资源的名称, 大小, 告诉其如何生成的状态信息, 块的名称。
 - `./src/index.js + 1 modules 223 bytes [built]` —— 名称, 大小, 生成方式。
 
 > 译者注: 最后一条输出, 在 `webpack 4` 中为 `[0] ./src/index.js + 1 modules 227 bytes {0} [built]` —— `entry` 资源的 `ID`, 名称, 大小, `entry` 块 `ID`, 生成方式。
