@@ -282,3 +282,63 @@ const getConfig = (mode) => {
 :::
 
 ### TypeScript
+微软的 `TypeScript` 是一种编译语言, 其设置与 `Babel` 类似。最妙的是, 除了 `JavaScript` 之外, 它还可以进行类型定义。一个好的编辑器可以收集这些信息并提供增强的开发体验。强类型对于开发很有价值, 因为它可以更轻松地声明类型。
+
+与 `Facebook` 的类型检查器 **`Flow`** 相比, `TypeScript` 在生态系统方面是更安全的选择。因此, 您可以为它找到更多的预设类型定义, 总体而言, 支持的质量应该更好。
+
+[ts-loader](https://www.npmjs.com/package/ts-loader) 是 `TypeScript` 的推荐插件。一种选择是只进行编译, 然后在 `webpack` 之外进行类型检查, 或使用 [fork-ts-checker-webpack-plugin](https://www.npmjs.com/package/fork-ts-checker-webpack-plugin) 来在单独的进程中进行检查。
+
+您也可以通过 [@babel/plugin-transform-typescript](https://www.npmjs.com/package/@babel/plugin-transform-typescript) 使用 `Babel` 编译 `TypeScript`, 尽管有一些[注意事项](https://babeljs.io/docs/en/next/babel-plugin-transform-typescript.html#caveats)。
+
+::: tip-zh | 
+您可以在 [@types/webpack](https://www.npmjs.com/package/@types/webpack) 和 [@types/webpack-env](https://www.npmjs.com/package/@types/webpack-env) 内找到 `webpack` 的类型定义。`Webpack 5` 开箱即用地包含 `TypeScript` 支持。
+:::
+::: tip-zh | 
+要拆分 `TypeScript` 配置, 请使用 `extends` 属性(`"extends": "./tsconfig.common"`), 然后使用 **`ts-loader`** 通过 `configFile` 控制 `webpack` 使用哪个文件。
+:::
+::: tip-zh | 
+**`ESLint`** 有一个 [typescript-eslint-parser](https://www.npmjs.com/package/typescript-eslint-parser)。也可以通过 [tslint](https://www.npmjs.com/package/tslint) 对其进行处理。
+:::
+
+### 使用 TypeScript 编写 Webpack 配置
+如果已经为项目设置了 `TypeScript`, 则可以通过将配置文件命名为 **`webpack.config.ts`** 来在 `TypeScript` 中编写配置。`Webpack` 能够自动检测到并正确运行。
+
+为此, 您需要在项目中安装 [ts-node](https://www.npmjs.com/package/ts-node) 或 [ts-node-dev](https://www.npmjs.com/package/ts-node-dev), 因为 `webpack` 使用它来执行配置。
+
+如果您以 `watch` 模式或通过 `webpack-dev-server` 运行 `webpack`, 默认情况下, 编译错误会导致构建失败。为避免这种情况, 请使用以下配置:
+
+**tsconfig.json**
+```json
+{
+  "ts-node": {
+    "logError": true,
+    "transpileOnly": true
+  }
+}
+```
+尤其是该 `logError` 配置非常重要, 因为如果没有此配置, 则会使 `ts-node` 在构建错误时崩溃。如果您想在进程之外进行类型检查, 设置 `transpileOnly` 选项很有用。例如, 您可以使用单独的脚本运行 `tsc`。通常, 编辑器工具可以在开发过程中捕获类型问题, 因此无需通过 **`ts-node`** 检查。
+
+### Flow
+[Flow](https://flow.org/) 根据您的代码及其类型注释执行静态分析。您必须将其作为单独的工具安装, 然后针对您的代码运行它。
+
+如果使用 `React`, 则 `React` 特定的 `Babel` 预设通过 [babel-plugin-syntax-flow](https://www.npmjs.com/package/babel-plugin-syntax-flow) 来完成大部分工作。它可以剥离 `Flow` 注释, 并将您的代码转换为可以进一步传输的格式。
+
+[flow-runtime](https://www.npmjs.com/package/flow-runtime) 允许基于我们的 `Flow` 注释进行运行时检查。这些方法补充了 `Flow` 静态检查器, 使您可以捕获更多问题。
+
+::: tip-zh | 
+[flow-coverage-report](https://www.npmjs.com/package/flow-coverage-report) 报告显示 `Flow` 类型注释的代码覆盖率。
+:::
+
+### WebAssembly
+[WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) 允许开发人员使用非 `JavaScript` 编程语言编写代码并将其编译为在浏览器中运行的代码。它是对 `JavaScript` 的补充, 并提供了一种潜在的优化途径。当您想运行旧的应用程序而不将其完全移植到 `JavaScript` 时, 该技术也很有用。
+
+从 `webpack 5` 开始, 该工具支持新型异步 `WebAssembly`。官方示例 [wasm-simple](https://github.com/webpack/webpack/tree/master/examples/wasm-simple) 和 [wasm-complex](https://github.com/webpack/webpack/tree/master/examples/wasm-complex) 很好地说明了实验功能。
+
+### 结论
+`Babel` 已成为开发人员必不可少的工具, 成为标准与老版本浏览器的桥梁。即使您针对的是现代浏览器, 也可以选择通过 `Babel` 进行转换。
+
+回顾一下:
+- **`Babel`** 使您可以控制要支持的浏览器。它可以将 `ES2015+` 功能编译为老版本浏览器可以理解的形式。**`@babel/preset-env`** 很有价值, 因为它可以根据您的浏览器定义选择要编译的功能以及要启用的 `polyfill`。
+- `Babel` 允许您使用实验性的语言功能。您可以找到许多插件, 这些插件可以通过优化来改善开发体验和生产构建。
+- 可以针对每个开发目标启用 `Babel` 功能。这样, 您可以确定在正确的位置使用了正确的插件。
+- 除了 `Babel`, `webpack` 还支持其他解决方案, 例如 `TypeScript` 或 `Flow`。`Flow` 可以补充 `Babel`, 而 `TypeScript` 是一种可以编译为 `JavaScript` 的编译语言。
