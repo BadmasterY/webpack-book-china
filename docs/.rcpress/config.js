@@ -60,6 +60,7 @@ module.exports = {
           collapsable: false,
           children: [
             ['./Building/source-maps', 'Source map'],
+            ['./Building/code-splitting', '代码拆分'],
           ]
         },
         {
