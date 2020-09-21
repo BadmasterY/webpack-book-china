@@ -61,6 +61,15 @@ module.exports = {
           children: [
             ['./Building/source-maps', 'Source map'],
             ['./Building/code-splitting', '代码拆分'],
+            ['./Building/bundle-splitting', '捆绑拆分'],
+            ['./Building/tidying-up', '整理'],
+          ]
+        },
+        {
+          title: 'Optimizing',
+          collapsable: false,
+          children: [
+            ['./Optimizing/minifying', '压缩'],
           ]
         },
         {
