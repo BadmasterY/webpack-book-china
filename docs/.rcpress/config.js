@@ -73,6 +73,8 @@ module.exports = {
             ['./Optimizing/tree-shaking', 'Tree shaking'],
             ['./Optimizing/environment-variables', '环境变量'],
             ['./Optimizing/adding-hashes-to-filenames', '在文件名中添加哈希'],
+            ['./Optimizing/separating-runtime', '分离运行时'],
+            ['./Optimizing/build-analysis', '构建分析'],
           ]
         },
         {
