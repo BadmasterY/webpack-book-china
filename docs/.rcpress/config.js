@@ -79,6 +79,15 @@ module.exports = {
           ]
         },
         {
+          title: 'Output',
+          collapsable: false,
+          children: [
+            ['./Output/targets', 'Targets'],
+            ['./Output/multiple-pages', '多页'],
+            ['./Output/server-side-rendering', '服务器端渲染'],
+          ]
+        },
+        {
           title: 'Appendices', // 附录
           collapsable: false,
           children: [

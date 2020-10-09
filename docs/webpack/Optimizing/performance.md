@@ -52,6 +52,60 @@
 - 通过在开发过程中跳过加载程序来执行较少的处理。特别是如果您使用的是现代浏览器, 则可以完全跳过使用 `babel-loader` 或同等功能的浏览器。
 - 使用 `include` 或者 `exclude` 与 `JavaScript` 特定的加载器一起使用。除非它已被正确配置, 否则 `webpack` 默认遍历 `node_modules`, 并在文件上执行 `babel-loader`。
 - 使用 [cache-loader](https://www.npmjs.com/package/cache-loader) 将开销相对庞大的加载器的结果(例如图像处理)缓存到磁盘。
-- 使用 [thread-loader](https://www.npmjs.com/package/thread-loader) 并行执行开销庞大的加载器。鉴于 `worder` 在 `Node` 中会产生开销, 因此只有在并行化操作繁重时才值得使用 `thread-loader`。
+- 使用 [thread-loader](https://www.npmjs.com/package/thread-loader) 并行执行开销庞大的加载器。鉴于 `worker` 在 `Node` 中会产生开销, 因此只有在并行化操作繁重时才值得使用 `thread-loader`。
 
 ### 在开发过程中优化重新打包效率
+通过将开发配置指向库的精简版本(如 `React`), 可以改进开发过程中的重新处理时间。在 `React` 的例子中, 您将失去基于 `propType` 的验证, 但是如果重新打包的速度至关重要, 那么这种技术是值得的。
+
+`module.noParse` 接受 `RegExp` 或 `RegExps` 数组。除了告诉 `webpack` 不要解析要使用的精简文件之外, 您还必须使用 `resolve.alias` 指向 `React`。在["使用软件包"]()一章中详细讨论了该想法。
+
+您可以将该想法封装在一个函数中:
+```js
+exports.dontParse = ({ name, path }) => ({
+  module: {
+    noParse: [new RegExp(path)],
+  },
+  resolve: {
+    alias: {
+      [name]: path,
+    },
+  },
+});
+```
+
+要使用该功能, 您可以按以下方式调用它:
+```js
+dontParse({
+  name: "react",
+  path: path.resolve(
+    __dirname, "node_modules/react/cjs/react.production.min.js",
+  ),
+}),
+```
+在进行此更改之后, 应用程序的重建速度应该更快, 具体取决于底层实现。该技术也可以应用于生产模式。
+
+假设 `module.noParse` 接受一个正则表达式, 如果要忽略所有 `*.min.js` 文件, 可以将其设置为 `/\.min\.js/`。
+
+::: warning-zh | 
+并非所有的模块都支持 `module.noParse`。它们不应该包含 `require`、`define` 或者类似的引用, 这将导致 `Uncaught ReferenceError: require is not defined` 错误。
+:::
+
+### Webpack 4 性能技巧
+有多种 `webpack 4` 技巧可用于提高性能:
+- 如果设置 `output.futureEmitAssets` 后, 则启用来自 `webpack 5` 的相关逻辑。[基于 Shawn Wang](https://twitter.com/swyx/status/1218173290579136512), 它既减少了内存使用, 又提高了性能。
+- 有时会出现与版本相关的性能衰退, [Kenneth Chau 为 webPack 4 编制了一份很好的列表](https://medium.com/@kenneth_chau/speeding-up-webpack-typescript-incremental-builds-by-7x-3912ba4c1d15)。主要思想是使用带有 `experimentalWatchApi` 的 `ts-loader` 来简化 `stats.toJson`, 并设置 `output.pathinfo` 为 `false`。
+- [Jared Palmer 提到](https://twitter.com/jaredpalmer/status/1265298834906910729), 将 `optimization` 属性及其 `splitChunks`, `removeAvailableModules` 和 `removeEmptyChunks` 属性设置为 `false` 可以提高开发模式下的性能。
+- [webpack-plugin-ramdisk](https://www.npmjs.com/package/webpack-plugin-ramdisk) 将构建输出写入 `RAM` 磁盘, 它可以在开发期间以及在您必须执行许多后续构建的情况下提供帮助。
+
+### 结论
+您可以通过多种方式优化 `webpack` 的性能。通常, 在转向更复杂的技术之前, 最好先从更容易理解的技术开始。必须使用的确切方法取决于项目。
+
+回顾一下:
+- 首先从快速实现的高级技术开始。
+- 较低级的技术更为复杂, 但也会带来更多的好处。
+- 由于 `webpack` 默认使用单个实例运行, 所以并行化是值得的。
+- 特别是在开发过程中, 由于使用现代浏览器, 跳过某些工作是完全可以接受的。
+
+::: tip-zh | 
+[官方构建性能指南](https://webpack.js.org/guides/build-performance/)有更多的提示。另请参阅[保证快速运行 webpack: 提高构建性能的现场指南](https://slack.engineering/keep-webpack-fast-a-field-guide-for-better-build-performance-f56a5995e8f1), [我们如何将 webpack 的构建性能提高 95％](https://blog.box.com/blog/how-we-improved-webpack-build-performance-95/), [webpack 的优化 — 一个案例研究](https://medium.com/walmartlabs/webpack-optimization-a-case-study-92b130334b6c) 和 [Google 的 Web 基本原理](https://developers.google.com/web/fundamentals/performance/webpack/)。
+:::
