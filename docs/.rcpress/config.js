@@ -85,6 +85,16 @@ module.exports = {
             ['./Output/targets', 'Targets'],
             ['./Output/multiple-pages', '多页'],
             ['./Output/server-side-rendering', '服务器端渲染'],
+            ['./Output/module-federation', 'Module federation']
+          ]
+        },
+        {
+          title: 'Techniques',
+          collapsable: false,
+          children: [
+            ['./Techniques/dynamic-loading', '动态加载'],
+            ['./Techniques/web-workers', 'Web Workers'],
+            ['./Techniques/i18n', '国际化'],
           ]
         },
         {

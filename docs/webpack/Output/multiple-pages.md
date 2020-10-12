@@ -180,7 +180,7 @@ const getConfig = (mode) => {
 ```
 
 这些更改之后, `/another` 应显示一些熟悉的内容:
-![出现另一页](../../multiple-pages/another.png)
+![出现另一页](../../output/another.png)
 
 #### 利弊
 如果您构建应用程序(`npm run build`), 则应该找到 `another/index.html`。根据生成的代码, 您可以进行以下观察:
