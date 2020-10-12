@@ -88,3 +88,5 @@ const combineContexts = (...contexts) => {
 - `require.context` 是一项高级功能, 通常隐藏在幕后。如果必须对大量文件执行查找, 请使用它。
 - 以某种形式编写的动态 `import` 文件会生成一个 `require.context` 调用。在这种情况下, 代码的读取效果会更好一些。
 - 该技术仅适用于文件系统。如果必须对 `URL` 进行操作, 则应考虑客户端解决方案。
+
+下一章介绍如何将 `Web Worker` 与 `webpack` 一起使用。
