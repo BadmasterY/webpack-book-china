@@ -85,7 +85,7 @@ module.exports = {
             ['./Output/targets', 'Targets'],
             ['./Output/multiple-pages', '多页'],
             ['./Output/server-side-rendering', '服务器端渲染'],
-            ['./Output/module-federation', 'Module federation']
+            ['./Output/module-federation', 'Module federation'],
           ]
         },
         {
@@ -95,8 +95,19 @@ module.exports = {
             ['./Techniques/dynamic-loading', '动态加载'],
             ['./Techniques/web-workers', 'Web Workers'],
             ['./Techniques/i18n', '国际化'],
+            ['./Techniques/testing', '测试'],
+            ['./Techniques/deploying', '部署应用'],
+            ['./Techniques/consuming', '使用软件包'],
           ]
         },
+        {
+          title: 'Extending',
+          collapsable: false,
+          children: [
+            ['./Extending/loaders', '用加载器扩展']
+          ],
+        },
+        ['conclusion', '结论'],
         {
           title: 'Appendices', // 附录
           collapsable: false,
