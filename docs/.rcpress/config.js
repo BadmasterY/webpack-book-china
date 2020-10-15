@@ -104,7 +104,8 @@ module.exports = {
           title: 'Extending',
           collapsable: false,
           children: [
-            ['./Extending/loaders', '用加载器扩展']
+            ['./Extending/loaders', '用加载器扩展'],
+            ['./Extending/plugins', '用插件扩展'],
           ],
         },
         ['conclusion', '结论'],
