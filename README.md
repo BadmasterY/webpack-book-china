@@ -7,4 +7,4 @@
 [原文链接](https://github.com/survivejs/webpack-book), 翻译内容全部来自个人使用过程中的理解，有错误请指出  
 
 ## 更新
-- `2020-08-29`: 凑巧的是, 整备趁着 `webpack 5` 正式上线之前, 再来温习一遍 `webpack 4` 相关内容。不曾想, 直接发现[《webpack-book》](https://github.com/survivejs/webpack-book)已经预更新了 `webpack 5` 相关内容...所以, `Relearn` 系列第二部分来了! ||ヽ(*￣▽￣*)ノミ|Ю
+- `2020-08-29`(**已完成**): 凑巧的是, 整备趁着 `webpack 5` 正式上线之前, 再来温习一遍 `webpack 4` 相关内容。不曾想, 直接发现[《webpack-book》](https://github.com/survivejs/webpack-book)已经预更新了 `webpack 5` 相关内容...所以, `Relearn` 系列第二部分来了! ||ヽ(*￣▽￣*)ノミ|Ю
