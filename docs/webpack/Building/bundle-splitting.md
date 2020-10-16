@@ -4,7 +4,7 @@
 最好只下载更改的部分。如果供应商依赖关系发生变化, 则客户端应仅获取供应商依赖。实际的应用程序代码也是如此。可以使用 `optimization.splitChunks.cacheGroups` 进行拆分。在生产模式下运行时, webpack 4 可以执行一系列开箱即用的拆分, 但是在这种情况下, 我们将手动执行一些操作。
 
 ::: tip-zh | 
-要正确地使捆绑包失效, 您必须将 `hash` 附加到生成的捆绑包名称中, 如["在文件名中添加哈希"]()一章中所述。
+要正确地使捆绑包失效, 您必须将 `hash` 附加到生成的捆绑包名称中, 如["在文件名中添加哈希"](../Optimizing/adding-hashes-to-filenames)一章中所述。
 :::
 
 ### 捆绑拆分的想法
@@ -12,7 +12,7 @@
 
 举一个简单的例子, 您可以使用 `main.js`(10 kB)和 `vendor.js`(`90 kB`)代替 `main.js`(100 kB)。现在, 对应用程序所做的更改对于之前已经使用过该应用程序的客户端来说是方便的。
 
-缓存会带来一些问题。其中之一是缓存失效。在["在文件名中添加哈希"]()一章中讨论了与此相关的方法。
+缓存会带来一些问题。其中之一是缓存失效。在["在文件名中添加哈希"](../Optimizing/adding-hashes-to-filenames)一章中讨论了与此相关的方法。
 
 ### 添加要拆分的内容
 鉴于没有太多要拆分成供应商捆绑包的内容, 因此应该在其中添加一些内容。首先将 `React` 添加到项目中:
@@ -142,7 +142,7 @@ const config = {
   ],
 },
 ```
-如果使用 `webpack` `records`, 这些插件可以获得良好的缓存行为。在["在文件名中添加哈希"]()一章中详细讨论了这个想法。
+如果使用 `webpack` `records`, 这些插件可以获得良好的缓存行为。在["在文件名中添加哈希"](../Optimizing/adding-hashes-to-filenames)一章中详细讨论了这个想法。
 
 `webpack.optimize` 包含 `LimitChunkCountPlugin` 和 `MinChunkSizePlugin` 可进一步控制块大小。
 
@@ -172,7 +172,7 @@ const config = {
 如果使用此配置, 则可以删除 `optimization.splitChunks` 并且输出应该仍然相同。
 
 ::: warning-zh | 
-要使用 `webpack-plugin-server` 的方法, 在这种情况下, 您必须在 `webpack-plugin-serve/client` 中注入 `app.import`。这样做需要在 `AdccTytotoAL` 中进行额外的检查。该功能在["多页"]()一章中介绍。
+要使用 `webpack-plugin-server` 的方法, 在这种情况下, 您必须在 `webpack-plugin-serve/client` 中注入 `app.import`。这样做需要在 `AdccTytotoAL` 中进行额外的检查。该功能在["多页"一章中介绍。
 :::
 
 ::: tip-zh | 
@@ -180,7 +180,7 @@ const config = {
 :::
 
 ### 结论
-现在的情况比以前好多了。请注意 `main` 捆绑包与供应商捆绑包相比有多小。为了从这种分割中获益, 您可以在本书的下一部分["在文件名中添加哈希"]()一章中设置缓存。
+现在的情况比以前好多了。请注意 `main` 捆绑包与供应商捆绑包相比有多小。为了从这种分割中获益, 您可以在本书的下一部分["在文件名中添加哈希"](../Optimizing/adding-hashes-to-filenames)一章中设置缓存。
 
 回顾一下:
 - `Webpack` 允许您通过 `optimization.splitChunks.cacheGroups` 字段从配置中拆分捆绑包。默认情况下, 它还会在生产模式下执行捆绑包拆分。

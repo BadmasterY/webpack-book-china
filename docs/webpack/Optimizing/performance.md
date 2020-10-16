@@ -31,7 +31,7 @@
 可以通过将 `parallel-webpack` 作为开发依赖项安装到项目中, 然后用 `parallel-webpack` 替换 `webpack` 命令来使用。
 
 #### thread-loader 和 happypack - 模块级并行
-`thread-loader` 和 `parallel-webpack` 允许在模块级别上并行执行。`thread-loader` 在加载链中使用。但是, [使用它并不总是可以保证速度的提高]()。`happypack` 是处于维护模式中的一种更复杂的方法, 有必要检查 `thread-loader` 的并行化是否不起作用。
+`thread-loader` 和 `parallel-webpack` 允许在模块级别上并行执行。`thread-loader` 在加载链中使用。但是, [使用它并不总是可以保证速度的提高](https://blog.johnnyreilly.com/2018/12/you-might-not-need-thread-loader.html)。`happypack` 是处于维护模式中的一种更复杂的方法, 有必要检查 `thread-loader` 的并行化是否不起作用。
 
 ### 低级优化
 特定的较低级别的优化可能很好理解。关键是让 `webpack` 减少工作量。请考虑以下示例:
@@ -57,7 +57,7 @@
 ### 在开发过程中优化重新打包效率
 通过将开发配置指向库的精简版本(如 `React`), 可以改进开发过程中的重新处理时间。在 `React` 的例子中, 您将失去基于 `propType` 的验证, 但是如果重新打包的速度至关重要, 那么这种技术是值得的。
 
-`module.noParse` 接受 `RegExp` 或 `RegExps` 数组。除了告诉 `webpack` 不要解析要使用的精简文件之外, 您还必须使用 `resolve.alias` 指向 `React`。在["使用软件包"]()一章中详细讨论了该想法。
+`module.noParse` 接受 `RegExp` 或 `RegExps` 数组。除了告诉 `webpack` 不要解析要使用的精简文件之外, 您还必须使用 `resolve.alias` 指向 `React`。在["使用软件包"](../Techniques/consuming)一章中详细讨论了该想法。
 
 您可以将该想法封装在一个函数中:
 ```js

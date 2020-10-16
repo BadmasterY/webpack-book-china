@@ -98,7 +98,7 @@ exports.minifyCSS = ({ options }) => ({
 ```
 
 ::: warning-zh | 
-如果像["构建分析"]()一章中所讨论的那样将 `--json` 输出与 `webpack` 一起使用, 那么应该为插件设置 `canPrint: false`。
+如果像["构建分析"](../Optimizing/build-analysis)一章中所讨论的那样将 `--json` 输出与 `webpack` 一起使用, 那么应该为插件设置 `canPrint: false`。
 :::
 
 将函数连接到配置文件:

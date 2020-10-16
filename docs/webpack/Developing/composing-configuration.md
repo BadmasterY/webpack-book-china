@@ -70,7 +70,7 @@ exports.page = ({ title }) => ({
 });
 ```
 ::: tip-zh | 
-为了简单起见, 我们将使用 `JavaScript` 开发所有配置。在这里也可以使用 `TypeScript`。如果您想这样做, 请参阅[加载JavaScript]()一章了解所需的 `TypeScript` 配置。
+为了简单起见, 我们将使用 `JavaScript` 开发所有配置。在这里也可以使用 `TypeScript`。如果您想这样做, 请参阅[加载 JavaScript](../Loading/javascript)一章了解所需的 `TypeScript` 配置。
 :::
 
 要连接此配置, 请按照以下代码示例进行 `webpack.config.js` 配置:
@@ -160,7 +160,7 @@ module.exports = getConfig(mode);
 
 ### 构建自己的配置包指南
 如果您使用我提到的配置包方法, 请考虑以下准则:
-- 使用 `TypeScript` 开发软件包定义接口是有意义的。如要在 `TypeScript` 中编写配置, ["加载JavaScript"]()一章中讨论的那样将十分有用。
+- 使用 `TypeScript` 开发软件包定义接口是有意义的。如要在 `TypeScript` 中编写配置, ["加载 JavaScript"](../Loading/javascript)一章中讨论的那样将十分有用。
 - 一次仅公开包含一项功能的函数。例如, 这样做可以轻松替换[模块热更新](../Appendices/hmr.html)的实现方式。
 - 通过函数参数提供足够的定制选项。最好公开一个对象, 这样可以模拟 `JavaScript` 中的命名参数。然后, 您可以从中解构参数, 同时将其与默认值和 `TypeScript` 类型优雅结合。
 - 在配置包中包含所有相关的依赖项。在特定情况下, 如果希望使用者能够控制特定版本, 可以使用 `peerDependencies`。这样做意味着您可能会下载更多所需的依赖项, 但这是一个很好的折衷方案。

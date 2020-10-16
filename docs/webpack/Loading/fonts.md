@@ -102,7 +102,7 @@
 ### 基于 SVG 生成字体文件
 如果您更喜欢使用基于 `SVG` 的字体, 则可以使用 [webfonts-loader](https://www.npmjs.com/package/webfonts-loader) 将它们打包为一个字体文件。
 ::: warning-zh | 
-如果已经进行了专用于 `SVG` 图片的配置, 请小心 `SVG` 图片。如果要以不同方式处理字体 `SVG`, 请仔细配置其定义。["加载器定义"]()一章介绍了备选方法。
+如果已经进行了专用于 `SVG` 图片的配置, 请小心 `SVG` 图片。如果要以不同方式处理字体 `SVG`, 请仔细配置其定义。["加载器定义"](../Loading/loader-definitions)一章介绍了备选方法。
 :::
 
 ### 使用 Goolgle 字体

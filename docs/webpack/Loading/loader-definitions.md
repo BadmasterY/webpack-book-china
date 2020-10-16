@@ -268,7 +268,7 @@ import "!!url-loader!./bar.png";
 如果要将上下文信息嵌入到文件名中, 则规则可以使用 `resourcePath` 而不是 `resourceQuery`。
 
 ### 了解加载器行为
-通过检查装载机的行为可以更详细地了解它们。[loader-runner](https://www.npmjs.com/package/loader-runner) 使您无需 `webpack` 即可独立运行它们。`Webpack` 在内部使用此软件包, 在[使用加载器扩展]()一章详细介绍了该软件包。
+通过检查装载机的行为可以更详细地了解它们。[loader-runner](https://www.npmjs.com/package/loader-runner) 使您无需 `webpack` 即可独立运行它们。`Webpack` 在内部使用此软件包, 在[使用加载器扩展](../Extending/loaders)一章详细介绍了该软件包。
 
 [inspect-loader](https://www.npmjs.com/package/inspect-loader) 可让您检查加载器之间传递的内容。您无需将 `console.log` 插入 `node_modules`, 您可以将此加载器附加到您的配置中并检查其中的流程。
 

@@ -169,7 +169,7 @@ $ node_modules/.bin/wp --mode production
 ```
 
 输出显示:
-- `Hash: 77b99c0f9a9f1f7262a6` —— 构建的哈希值。您可以使用它通过 <mark>[hash]</mark> 占位符使资源无效。在[将哈希添加到文件名]()一章中详细讨论哈希。
+- `Hash: 77b99c0f9a9f1f7262a6` —— 构建的哈希值。您可以使用它通过 <mark>[hash]</mark> 占位符使资源无效。在[将哈希添加到文件名](../Optimizing/adding-hashes-to-filenames)一章中详细讨论哈希。
 - `Version: webpack 5.0.0-beta.29` —— `Webpack` 版本。
 - `Time: 292ms` —— 执行构建所花费的时间。
 - `asset index.html 198 bytes [emitted]` —— 流程产生的另一个生成的资源。
@@ -214,7 +214,7 @@ $ node_modules/.bin/wp --mode production
 - 使用本地安装的webpack是一个好主意, 有助于确定自己使用哪一版本的 `webpack`, 本地依赖关系也适用于**持续集成**环境。
 - `Webpack` 通过 **`webpack-cli`** 提供了一个命令行界面, 即使没有配置也可以使用, 但是任何高级用法都需要配置。**webpack-nano** 是仅使用基本用法的不错选择。
 - 必须单独编写一个 `webpack.config.js` 文件来编写复杂的设置。
-- **`mini-html-webpack-plugin`** 和 **`HtmlWebpackPlugin`** 可以用来为应用程序生成一个 `HTML` 入口文件。 在["多页"]()一章中, 您将看到如何使用插件生成多个单独的页面。
+- **`mini-html-webpack-plugin`** 和 **`HtmlWebpackPlugin`** 可以用来为应用程序生成一个 `HTML` 入口文件。 在["多页"](../Output/multiple-pages)一章中, 您将看到如何使用插件生成多个单独的页面。
 - 使用 `npm` **`package.json`** 脚本来管理 `webpack` 是很方便的。可以将其用作轻型任务运行程序, 并在 `webpack` 之外使用系统功能。
 
 在下一章中, 您将学习如何通过启用自动刷新浏览器来改善开发人员的体验。

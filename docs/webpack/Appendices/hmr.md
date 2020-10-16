@@ -50,7 +50,7 @@
 :::
 
 ::: warning-zh | 
-如果您使用的是 `Babel`, 请对其进行配置, 允许生成 `Webpack` 控制模块, 否则 `HMR` 逻辑将无法工作! 有关确切设置, 请参见["加载JavaScript"]()一章。
+如果您使用的是 `Babel`, 请对其进行配置, 允许生成 `Webpack` 控制模块, 否则 `HMR` 逻辑将无法工作! 有关确切设置, 请参见["加载JavaScript"](../Loading/javascript)一章。
 :::
 
 ### 实现 HMR 接口
@@ -95,7 +95,7 @@ if (module.hot) {
 :::
 
 ::: tip-zh | 
-当 `minifier` 碰到 <mark>if(module.hot)</mark> 代码块时, 该块将从生产构建中剔除。["代码压缩"]()一章中深入探讨该问题。
+当 `minifier` 碰到 <mark>if(module.hot)</mark> 代码块时, 该块将从生产构建中剔除。["压缩"](../Optimizing/minifying)一章中深入探讨该问题。
 :::
 
 ::: tip-zh | 
@@ -125,7 +125,7 @@ entry: {
 ```
 
 ### HMR 与动态加载
-通过 <mark>require.context</mark> 和 `HMR` 进行[动态加载]()需要额外的操作:
+通过 <mark>require.context</mark> 和 `HMR` 进行[动态加载](../Techniques/dynamic-loading)需要额外的操作:
 ```js
 const req = require.context("./pages", true, /^(.*\.(jsx$))[^.]*$/g);
 

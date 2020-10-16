@@ -169,7 +169,7 @@ const config = {
 ```
 
 ::: tip-zh | 
-有一个 **Stack Overflow** 的[问题](https://stackoverflow.com/questions/25384360/how-to-prevent-moment-js-from-loading-locales-with-webpack/25426019), 详细讨论了这些想法。另请参阅 [Ivan Akulov 对 ContextReplacementPlugin 的解释]()。
+有一个 **Stack Overflow** 的[问题](https://stackoverflow.com/questions/25384360/how-to-prevent-moment-js-from-loading-locales-with-webpack/25426019), 详细讨论了这些想法。另请参阅 [Ivan Akulov 对 ContextReplacementPlugin 的解释](https://iamakulov.com/notes/webpack-contextreplacementplugin/)。
 :::
 ::: tip-zh | 
 [webpack-libs-optimizations](https://github.com/GoogleChromeLabs/webpack-libs-optimizations) 列出了上述特定于库的其他优化。

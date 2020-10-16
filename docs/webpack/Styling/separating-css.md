@@ -47,7 +47,7 @@ exports.extractCSS = ({ options = {}, loaders = [] } = {}) => {
   };
 };
 ```
-该 <mark>[name]</mark> 占位符使用引用 `CSS` 的入口的名称。在[将哈希添加到文件名]()一章中详细讨论了占位符和哈希。
+该 <mark>[name]</mark> 占位符使用引用 `CSS` 的入口的名称。在[将哈希添加到文件名](../Optimizing/adding-hashes-to-filenames)一章中详细讨论了占位符和哈希。
 
 ::: tip-zh | 
 如果要将结果文件输出到特定目录, 可以通过传递路径来完成。范例: <mark>filename: "styles/[name].css"</mark>。

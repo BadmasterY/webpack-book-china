@@ -106,7 +106,7 @@ import "./main.css";
 `PostCSS` 支持基于 <mark>postcss.config.js</mark> 的配置。如果需要其他格式, 它内部依赖于 [cosmiconfig](https://www.npmjs.com/package/cosmiconfig)。
 :::
 ::: tip-zh | 
-[postcss-preset-env](https://www.npmjs.com/package/postcss-preset-env) 使用浏览器列表(`browserslist`)来确定要生成的 `CSS` 类型和加载的 `polyfill`。你可以把它看作 `CSS` 版本的 <mark>@babel/preset-env</mark>。后者将在["加载 JavaScript"]()一章中进行更详细的讨论。
+[postcss-preset-env](https://www.npmjs.com/package/postcss-preset-env) 使用浏览器列表(`browserslist`)来确定要生成的 `CSS` 类型和加载的 `polyfill`。你可以把它看作 `CSS` 版本的 <mark>@babel/preset-env</mark>。后者将在["加载 JavaScript"](../Loading/javascript)一章中进行更详细的讨论。
 :::
 
 ### 了解 css-loader 查找
@@ -114,7 +114,7 @@ import "./main.css";
 - 绝对路径导入: <mark>url("https://mydomain.com/static/demo.png")</mark>
 - 根目录相对路径导入: <mark>url("/static/img/demo.png")</mark>
 
-如果您依赖于这种类型的导入, 则必须按照["整理"]()一章中的做法, 将文件复制到项目中。[copy-webpack-plugin](https://www.npmjs.com/package/copy-webpack-plugin) 可以用于此目的, 但是您也可以将文件复制到 `webpack` 之外。前一种方法的好处是[开发服务器](../Developing/development-server)可以接管。
+如果您依赖于这种类型的导入, 则必须按照["整理"](../Building/tidying-up)一章中的做法, 将文件复制到项目中。[copy-webpack-plugin](https://www.npmjs.com/package/copy-webpack-plugin) 可以用于此目的, 但是您也可以将文件复制到 `webpack` 之外。前一种方法的好处是[开发服务器](../Developing/development-server)可以接管。
 
 其他任何引入方式都将通过 `webpack` 进行, 并将尝试解析 <mark>url</mark> 和 <mark>@import</mark> 表达式。要禁用此默认行为, 请通过 `loader` 选项设置 **`css-loader`** 的 <mark>url: false</mark> 与 <mark>import: false</mark>。
 ::: tip-zh | 

@@ -2,7 +2,7 @@
 
 `Webpack` 是一个**模块化打包工具**。`Webpack` 可以与一个单独的任务运行器一起进行打包。但是, 由于社区开发的 `webpack` 插件, 打包程序(`bundler`)和任务运行程序(`taskrunner`)之间的界限变得模糊。有时, 这些插件用于执行通常在 `webpack` 之外完成的任务, 例如清理构建目录或部署构建, 尽管您也可以将这些任务推到 `webpack` 之外再执行。
 
-`React` 和 **`Hot Module Replacement`**(`HMR`)有助于普及 `webpack`, 并使其在 [Ruby on Rails](https://github.com/rails/webpacker) 等其他环境中使用。尽管其名称如此, 但 `webpack` 不限于 `Web` 开发。它也可以与其他目标捆绑在一起, 如["构建目标"](https://survivejs.com/webpack/output/targets/)一章中所述。
+`React` 和 **`Hot Module Replacement`**(`HMR`)有助于普及 `webpack`, 并使其在 [Ruby on Rails](https://github.com/rails/webpacker) 等其他环境中使用。尽管其名称如此, 但 `webpack` 不限于 `Web` 开发。它也可以与其他目标捆绑在一起, 如["Targets"](./Output/targets)一章中所述。
 
 ::: tip-zh | 
 如果您想更详细地了解构建工具及其历史, 请查看["构建工具比较"](./Appendices/comparison.html)附录。
@@ -34,7 +34,7 @@
 **入口**文件本身就是一个模块, 当 `webpack` 遇到一个模块时, 它会尝试使用 <mark>resolve</mark> 配置将模块与文件系统进行匹配。例如, 您可以告诉 `webpack` 除了 <mark>node_modules</mark> 模块外, 还可以对特定目录执行查找。
 
 ::: tip | 
-可以调整 `webpack` 对文件扩展名匹配的方式, 并且可以为目录定义特定的别名。在[使用软件包](https://survivejs.com/webpack/techniques/consuming/)章节涵盖了更详细的这些想法。
+可以调整 `webpack` 对文件扩展名匹配的方式, 并且可以为目录定义特定的别名。在[使用软件包](./Techniques/consuming)章节涵盖了更详细的这些想法。
 :::
 
 如果解析失败, 则 `webpack` 将引发运行时错误。如果 `webpack` 成功解析文件, 则 `webpack` 将根据加载器定义对匹配的文件执行处理。每个加载器针对模块内容应用特定的转换。
@@ -55,18 +55,18 @@
 尽管 `webpack` 主要用于打包 `JavaScript`, 但它可以捕获图像或字体等资源, 并为它们产出单独的文件。入口只是打包过程的一个起点, `webpack` 产出的内容完全取决于配置它的方式。
 
 ### 评估流程
-假设找到了所有加载器, 则 `webpack` 将从下至上, 从右至左(<mark>styleLoader(cssLoader('./main.css'))</mark>)评估匹配的加载器, 同时依次通过每个加载器运行模块。结果, 您将获得 `webpack` 注入到结果包中的输出。["加载器定义"](https://survivejs.com/webpack/loading/loader-definitions/)一章详细介绍了该主题。
+假设找到了所有加载器, 则 `webpack` 将从下至上, 从右至左(<mark>styleLoader(cssLoader('./main.css'))</mark>)评估匹配的加载器, 同时依次通过每个加载器运行模块。结果, 您将获得 `webpack` 注入到结果包中的输出。["加载器定义"](./Loading/loader-definitions)一章详细介绍了该主题。
 
 如果加载器评估完成而没有运行时错误, 则 `webpack` 会将在捆绑包中包含源代码。尽管加载器可以做很多事情, 但它们不能为高级任务提供足够的动力。插件可以拦截 `webpack` 提供的**运行时事件**。
 
-一个很好的例子是由 `MiniCssExtractPlugin` 执行的提取过程, 当与加载器一起使用时, 将 `CSS` 文件从捆绑软件中提取出来并分离到一个单独的文件中。没有此步骤, `CSS` 将被内联到生成的 `JavaScript` 中, 因为 `webpack` 默认将所有代码视为 `JavaScript`。提取思路在["分离CSS"](https://survivejs.com/webpack/styling/separating-css/)一章中进行了讨论。
+一个很好的例子是由 `MiniCssExtractPlugin` 执行的提取过程, 当与加载器一起使用时, 将 `CSS` 文件从捆绑软件中提取出来并分离到一个单独的文件中。没有此步骤, `CSS` 将被内联到生成的 `JavaScript` 中, 因为 `webpack` 默认将所有代码视为 `JavaScript`。提取思路在["分离CSS"](./Styling/separating-css)一章中进行了讨论。
 
 ### 完成
 在评估完每个模块之后, `webpack` 会写入 **`output`**。输出包括一个引导脚本。这是一个小型运行时, 在浏览器中执行结果, 并在 `manifest` 清单中列出要加载的包。
 
 `Manifest` 清单可以提取到其自己的文件中, 如本书稍后所述。根据您使用的构建目标, 输出会有所不同(针对 `web` 不是唯一的选择)。
 
-打包过程还不止这些。例如, 您可以定义特定的拆分点, 其中 `webpack` 会根据应用程序逻辑生成单独的包, 并进行加载。在[代码拆分](https://survivejs.com/webpack/building/code-splitting/)一章中讨论了这个想法。
+打包过程还不止这些。例如, 您可以定义特定的拆分点, 其中 `webpack` 会根据应用程序逻辑生成单独的包, 并进行加载。在[代码拆分](./Building/code-splitting)一章中讨论了这个想法。
 
 ### Webpack由配置驱动
 `Webpack` 的核心在于配置。这是从[官方webpack教程](https://webpack.js.org/get-started/)改编而来的示例, 并扩展了其要点:
@@ -116,14 +116,14 @@ module.exports = {
 :::
 
 ::: warning-zh | 
-`Webpack` 的插件是从上到下注册的, 但是加载器遵循相反的规则。如果加载器与现有的定义相匹配, 则意味着您将首先对其求值, 然后添加一个与现有 <mark>test</mark> 匹配的加载器。请参阅[加载器定义](https://survivejs.com/webpack/loading/loader-definitions/)一章, 以更好地理解其中差异。
+`Webpack` 的插件是从上到下注册的, 但是加载器遵循相反的规则。如果加载器与现有的定义相匹配, 则意味着您将首先对其求值, 然后添加一个与现有 <mark>test</mark> 匹配的加载器。请参阅[加载器定义](./Loading/loader-definitions)一章, 以更好地理解其中差异。
 :::
 
 ### 资源哈希
 使用 `webpack`, 您可以向每个捆绑包名称注入一个哈希(`hash`)值(例如 `app.d587bbd6.js`), 以便在更改时使客户端的捆绑包失效。在理想情况下, **捆绑拆分**允许客户机只重新加载一小部分数据。
 
 ### 模块热更新(HMR)
-您可能已经熟悉 [LiveReload](http://livereload.com/) 或 [BrowserSync](http://www.browsersync.io/) 之类的工具。这些工具会在您进行更改时自动刷新浏览器。[模块热更新](https://survivejs.com/webpack/appendices/hmr/)(`HMR`)使事情更进一步。对于 `React`, 它允许应用程序保持其状态而无需强制刷新。尽管这听起来并不很特别, 但在实践中却可以带来很大的不同。
+您可能已经熟悉 [LiveReload](http://livereload.com/) 或 [BrowserSync](http://www.browsersync.io/) 之类的工具。这些工具会在您进行更改时自动刷新浏览器。[模块热更新](./Appendices/hmr)(`HMR`)使事情更进一步。对于 `React`, 它允许应用程序保持其状态而无需强制刷新。尽管这听起来并不很特别, 但在实践中却可以带来很大的不同。
 
 `HMR` 也可以通过 [livereactload](https://github.com/milankinen/livereactload) 在 `Browserify` 中使用, 因此它不是 `webpack` 独有的功能。
 
@@ -136,7 +136,7 @@ module.exports = {
 `Webpack 5` 是该工具的新版本, 它承诺进行以下更改:
 
 - 在开发过程中有更好的缓存行为 —— 现在, 它可以在不同的运行之间重用基于磁盘的缓存。
-- 通过[模块联合](https://survivejs.com/webpack/output/module-federation/)支持微前端样式开发, 您可以在本章中进一步了解它。
+- 通过["Module Federation"](./Output/module-federation)支持微前端样式开发, 您可以在本章中进一步了解它。
 - 内部 `API` (特别是插件)已得到改进, 旧 `API` 已被弃用。
 - 开发和生产目标具有更好的默认值。例如, 现在 <mark>contenthash</mark> 将其用于生产, 从而产生可预测的缓存行为。在将哈希值添加到文件名一章中详细讨论了该主题。
 

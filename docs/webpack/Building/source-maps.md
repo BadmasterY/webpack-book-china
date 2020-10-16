@@ -87,7 +87,7 @@ Entrypoint main = main.css main.js main.css.map main.js.map
 `Webpack` 提供了多个内联 `source map` 类型。通常, 通常 `eval` 是起点, 并且 [webpack issue#2145](https://github.com/webpack/webpack/issues/2145#issuecomment-409029231) 建议使用 `inline-module-source-map`, 因为它是速度和质量之间的一个很好的折衷方案, 同时在 `Chrome` 和 `Firefox` 浏览器中可靠工作。
 
 为了更好地了解可用选项, 下面列出了这些选项, 同时为每个选项提供了一个小示例。这些示例是通过以下额外的 `webpack` 设置生成的:
-- `optimization.moduleIds = "named"` 旨在提高可读性。如果您正在使用[代码拆分](), 那么最好也进行 `optimization.chunkIds` 设置。
+- `optimization.moduleIds = "named"` 旨在提高可读性。如果您正在使用[代码拆分](../Building/code-splitting), 那么最好也进行 `optimization.chunkIds` 设置。
 - `mode` 设置为 `false` 避免 `webpack` 的默认处理
 
 #### devtool: "eval"
@@ -281,7 +281,7 @@ const config = {
 要覆盖它, 您必须在 `source map` 选项之前添加前缀(例如 `@source-map`)。更改之后, 假设使用了单独的 `source map` 类型, 您应该在 `JavaScript` 文件中看到 `//@` 类型的 `source map` 引用。
 
 ### 使用依赖的 source map
-假设您使用的软件包在其发行版中使用了内联 `source map`, 则可以使用 [source-map-loader]() 使 `webpack` 处理它们。无需针对软件包进行配置, 您将获得最小的调试输出。通常, 您可以跳过此步骤, 因为这是特例。
+假设您使用的软件包在其发行版中使用了内联 `source map`, 则可以使用 [source-map-loader](https://www.npmjs.com/package/source-map-loader) 使 `webpack` 处理它们。无需针对软件包进行配置, 您将获得最小的调试输出。通常, 您可以跳过此步骤, 因为这是特例。
 
 ### 样式的 source map
 如果要为样式文件启用 `source map`, 可以通过启用该 `sourceMap` 选项来实现。相同的想法适用于样式加载器, 例如 **`css-loader`**, **`sass-loader`** 和 **`less-loader`**。
@@ -289,7 +289,7 @@ const config = {
 当您在 `import` 中使用相对路径时, **`css-loader`** 存在问题, 这是一个[已知有问题](https://github.com/webpack-contrib/css-loader/issues/232)。要解决此问题, 您应该设置 `output.publicPath` 解析服务器 `URL`。
 
 ### 后端 source map
-如果按照["构建目标"]()一章中讨论的那样将 `target: node` 与 `webpack` 一起使用, 则仍应生成 `source map`。诀窍是如下配置:
+如果按照["Targets"](../Output/targets)一章中讨论的那样将 `target: node` 与 `webpack` 一起使用, 则仍应生成 `source map`。诀窍是如下配置:
 ```js
 const config = {
   output: {

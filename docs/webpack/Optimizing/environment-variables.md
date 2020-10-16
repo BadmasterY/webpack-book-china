@@ -108,7 +108,7 @@ export default (text = HELLO) => {
 `webpack.EnvironmentPlugin(["NODE_ENV"])` 是允许您引用环境变量的快捷方式。它在 `DefinePlugin` 内部使用, 并且您可以通过传递 `process.env.NODE_ENV` 实现相同的效果。
 :::
 ::: tip-zh | 
-[dotenv-webpack]() 更进一步, 将环境变量从点文件(`.env`)映射到内部版本使用的 `DefinePlugin`。
+[dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) 更进一步, 将环境变量从点文件(`.env`)映射到内部版本使用的 `DefinePlugin`。
 :::
 
 ### 用 Babel 替换自由变量
@@ -135,7 +135,7 @@ if (process.env.NODE_ENV === "production") {
 `Webpack` 可以根据 `DefinePlugin` 声明和此代码选择正确的分支。这里必须使用 `CommonJS` 模块导入, 因为 `ES2015` 的 `import` 不允许动态操作。
 
 ::: tip-zh | 
-["使用软件包"]()一章中讨论了一种相关技术, 即**别名**。
+["使用软件包"](../Techniques/consuming)一章中讨论了一种相关技术, 即**别名**。
 :::
 
 ::: warning-zh | 

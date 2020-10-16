@@ -141,7 +141,7 @@ body {
 [resize-image-loader](https://www.npmjs.com/package/resize-image-loader) 和 [active-loader](https://www.npmjs.com/package/responsive-loader) 允许您为现代浏览器生成 `srcset` 兼容的图像集合。`srcset` 使浏览器能够更好地控制要加载的图像以及何时可以获得更高的性能。
 
 ### 动态加载图像
-`Webpack` 允许您根据条件动态加载图像。为此, ["代码拆分"]()和["动态加载']()一章中介绍的技术就足够了。这样做可以节省带宽并仅在需要时加载图像, 或者在有时间时预加载图像。
+`Webpack` 允许您根据条件动态加载图像。为此, ["代码拆分"](../Building/code-splitting)和["动态加载'](../Techniques/dynamic-loading)一章中介绍的技术就足够了。这样做可以节省带宽并仅在需要时加载图像, 或者在有时间时预加载图像。
 
 ### 加载精灵图
 `sprite` 技术允许您将多个较小的图像组合成一个图像。它已经被用于游戏来描述动画, 对于 `web` 开发和避免请求开销都很有价值。
@@ -183,7 +183,7 @@ const Profile = () => <img src={src} />;
 ```jsx
 const Profile = () => <img src="avatar.png" />;
 ```
-如[代码拆分]()一章中所述, 也可以设置动态导入。这是一个小例子:
+如[代码拆分](../Building/code-splitting)一章中所述, 也可以设置动态导入。这是一个小例子:
 ```js
 const src = require(`./avatars/${avatar}`);
 ```

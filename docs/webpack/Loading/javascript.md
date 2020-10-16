@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 特别注意该函数是如何转换的。您可以尝试使用不同的浏览器定义和语言功能, 以查看输出如何根据配置进行更改。
 
 ::: tip-zh | 
-[@babel/preset-modules]() 通过修复现代浏览器中的错误超越了 **`@babel/preset-env`**。部分功能也已移植到 **`@babel/preset-env`**, 可以通过设置 `bugfixes: true` 来启用。仅对现代浏览器有用！
+[@babel/preset-modules](https://www.npmjs.com/package/@babel/preset-modules) 通过修复现代浏览器中的错误超越了 **`@babel/preset-env`**。部分功能也已移植到 **`@babel/preset-env`**, 可以通过设置 `bugfixes: true` 来启用。仅对现代浏览器有用！
 :::
 
 ### polyfilling 功能
@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 **`core-js`** 使用 `Promise` 这样的对象污染全局。考虑到这对库作者来说可能会有影响, 可以使用 [@babel/plugin-transform-runtime](https://babeljs.io/docs/plugins/transform-runtime/) 插件。它可以作为一个 `Babel` 插件启用, 它通过重写代码来避免全局变量的问题。
 :::
 ::: warning-zh | 
-某些 `webpack` 功能, 如[代码拆分](), 在 `webpack` 处理完加载器后, 将基于 `Promise` 的代码写入 `webpack` 的引导程序。这个问题可以通过在应用程序代码执行之前应用填充程序来解决。如: `entry: { app: ["core-js/es/promise", PATHS.app] }`。
+某些 `webpack` 功能, 如[代码拆分](../Building/code-splitting), 在 `webpack` 处理完加载器后, 将基于 `Promise` 的代码写入 `webpack` 的引导程序。这个问题可以通过在应用程序代码执行之前应用填充程序来解决。如: `entry: { app: ["core-js/es/promise", PATHS.app] }`。
 :::
 
 ### Babel 提示
@@ -170,7 +170,7 @@ __webpack_require__.r(__webpack_exports__);
 - [babel-plugin-log-deprecated](https://www.npmjs.com/package/babel-plugin-log-deprecated): 使用 `@deprecate` 注释将 `console.warn` 添加到具有该注释的函数中。
 - [babel-plugin-annotate-console-log](https://www.npmjs.com/package/babel-plugin-annotate-console-log): 使用有关调用上下文的信息来注释 `console.log` 调用, 这样就更容易查看它们的记录位置了。
 - [babel-plugin-sitrep](https://www.npmjs.com/package/babel-plugin-sitrep): 记录函数的所有赋值并打印它们。
-- [babel-plugin-transform-react-remove-prop-types](https://www.npmjs.com/package/babel-plugin-transform-react-remove-prop-types): 从生产版本中删除 `propType` 相关代码。它还允许组件作者生成包装后的代码, 这样就可以按["环境变量"]()一章中的讨论的那样将环境设置为 `DefinePlugin`。
+- [babel-plugin-transform-react-remove-prop-types](https://www.npmjs.com/package/babel-plugin-transform-react-remove-prop-types): 从生产版本中删除 `propType` 相关代码。它还允许组件作者生成包装后的代码, 这样就可以按["环境变量"](../Optimizing/environment-variables)一章中的讨论的那样将环境设置为 `DefinePlugin`。
 - [babel-plugin-macros](https://www.npmjs.com/package/babel-plugin-macros): 提供了一个运行时环境来进行较小的 `Babel` 修改, 而无需其他插件设置。
 
 ::: tip-zh | 

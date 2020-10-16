@@ -53,7 +53,7 @@ webpack(config, (err, stats) => {
 #### webpack-stats-plugin 和 webpack-bundle-tracker
 如果要通过插件管理统计信息, 请查看 [webpack-stats-plugin](https://www.npmjs.com/package/webpack-stats-plugin)。它使您可以控制输出, 并可以在写入之前对其进行转换。您可以使用它从输出中排除特定的依赖项。
 
-[webpack-bundle-tracker]() 可以在 `webpack` 编译时捕获数据。为此, 它使用 `JSON`。
+[webpack-bundle-tracker](https://www.npmjs.com/package/webpack-bundle-tracker) 可以在 `webpack` 编译时捕获数据。为此, 它使用 `JSON`。
 
 ### 启用性能预算
 `Webpack` 允许您定义性能预算。这个想法是它给您的构建进行大小限制, 它必须遵循该限制。该功能默认情况下处于禁用状态, 并且计算包括要计算的入口块。

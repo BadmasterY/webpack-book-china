@@ -75,7 +75,7 @@ const productionConfig = merge([
 
 如果您构建项目(`npm run build`), 则应注意所构建的文件开头包含注释 `/*! 0b5bb05 */` 或 `/*! v1.7.0-9-g5f82fe8 */`。
 
-可以通过调整 `banner` 进一步定制输出。您还可以使用 `webpack.DefinePlugin` 将修订信息传递给应用程序。在["环境变量"]()一章中详细讨论了该技术。
+可以通过调整 `banner` 进一步定制输出。您还可以使用 `webpack.DefinePlugin` 将修订信息传递给应用程序。在["环境变量"](../Optimizing/environment-variables)一章中详细讨论了该技术。
 ::: warning-zh | 
 该代码期望您在 `Git` 存储库中运行它! 否则, 您将得到一个 `fatal: Not a git repository (or any of the parent directories): .git` 错误。如果您不使用 `Git`, 则可以用其他数据替换 `banner`。
 :::
@@ -90,6 +90,6 @@ const productionConfig = merge([
 
 回顾一下:
 - 您可以找到许多可作为任务使用的小插件, 并将 `webpack` 推向任务运行器。
-- 这些任务包括清理构建和部署。在["部署应用"]()一章中详细讨论了后者的话题。
+- 这些任务包括清理构建和部署。在["部署应用"](../Techniques/deploying)一章中详细讨论了后者的话题。
 - 最好在生产版本中添加一些注释, 以告知已部署的版本。这样, 您可以更快地调试潜在问题。
-- 像这些辅助任务可以在 `webpack` 之外执行。如果您正在使用["多页"]()一章中讨论的多页设置, 则这很有必要。
+- 像这些辅助任务可以在 `webpack` 之外执行。如果您正在使用["多页"](../Output/multiple-pages)一章中讨论的多页设置, 则这很有必要。
